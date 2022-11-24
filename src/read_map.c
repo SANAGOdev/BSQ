@@ -7,7 +7,7 @@
 
 #include "../include/my.h"
 
-void open_map(int argc, char *file)
+char *read_map(int argc, char *file)
 {
     int fd = open(file, O_RDONLY);
     int res;
@@ -18,5 +18,6 @@ void open_map(int argc, char *file)
     }
     res = read(fd, buf, BUF_SIZE);
     buf[res] = '\0';
-    printf("%s\n", buf);
+    char *resultat = buf;
+    return resultat;
 }

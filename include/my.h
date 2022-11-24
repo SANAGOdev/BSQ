@@ -16,6 +16,7 @@
     #include <sys/types.h>
     #include <sys/stat.h>
     #include <fcntl.h>
-    void open_map(int argc, char *file);
+    char *read_map(int argc, char *file);
+    char **convert_map(char *map);
 
 #endif /* !MY_ */

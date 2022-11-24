@@ -15,6 +15,14 @@ int main(int argc, char **argv)
         printf("Pathname in first argument is required.\n");
         exit(84);
     }
-    open_map(argc, file);
+    char *res = read_map(argc, file);
+    char **array = convert_map(res);
+
+    int i = 0;
+
+    while (array[i] != NULL) {
+        printf("%s", array[i]);
+        i++;
+    }
     return 0;
 }
