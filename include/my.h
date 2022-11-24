@@ -6,14 +6,16 @@
 */
 
 #ifndef MY_
-#define MY_
+    #define MY_
+    #define BUF_SIZE 4096
+
 
     #include <stdio.h>
     #include <stdlib.h>
+    #include <unistd.h>
     #include <sys/types.h>
     #include <sys/stat.h>
     #include <fcntl.h>
-
-    char *open_map(char *buf,int buf_size, char *file);
+    void open_map(int argc, char *file);
 
 #endif /* !MY_ */

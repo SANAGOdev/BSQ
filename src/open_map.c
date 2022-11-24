@@ -7,17 +7,16 @@
 
 #include "../include/my.h"
 
-char *open_map(char *buf,int buf_size, char *file)
+void open_map(int argc, char *file)
 {
-    buf[buf_size];
-    int fd = open(file, O_RDWR, 0700);
+    int fd = open(file, O_RDONLY);
+    int res;
+    char buf[BUF_SIZE + 1];
     if (fd == -1) {
+        printf("Error invalid pathname.\n");
         exit(84);
     }
-    
-    read(fd, buf, buf_size);
-    buf[buf_size] = '\0';
-
-    close(fd);
-    return buf;
+    res = read(fd, buf, BUF_SIZE);
+    buf[res] = '\0';
+    printf("%s\n", buf);
 }
